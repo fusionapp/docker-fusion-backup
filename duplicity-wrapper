@@ -2,4 +2,4 @@
 [ -f /duplicity/credentials.sh ] && source /duplicity/credentials.sh
 export AWS_ACCESS_KEY_ID
 export AWS_SECRET_ACCESS_KEY
-exec /usr/bin/duplicity --archive-dir /duplicity/cache "$@"
+exec ionice --class 3 /usr/bin/duplicity --archive-dir /duplicity/cache "$@"
